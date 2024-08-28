@@ -29,7 +29,7 @@ function CreatEv() {
 
         
         axios.post('http://localhost:8000/events', eventData)
-        .then( navigate('/'))
+        .then( navigate('/event'))
             .catch(err => {
                 console.error(err);
                 alert('Une erreur est survenue lors de l\'ajout de l\'événement.'); 

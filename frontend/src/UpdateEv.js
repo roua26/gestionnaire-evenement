@@ -37,7 +37,7 @@ function UpdateEv  () {
             temps
         };
         axios.put('http://localhost:8000/events/' + id, eventData)
-            .then( navigat('/'))
+            .then( navigat('/event'))
             .catch(err => console.log(err))
     }
     

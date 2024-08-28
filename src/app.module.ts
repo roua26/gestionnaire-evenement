@@ -5,6 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { EventModule } from './events/event.module';
 import { join } from 'path';
+import { AuthModule } from './auth/user.module';
+import { User } from './auth/user.entity';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -16,10 +19,12 @@ import { join } from 'path';
         username: 'root',
         password: "",
         database: 'event',
-        entities: [join(process.cwd(), 'dist/**/*.entity.js')],
+        entities: [join(process.cwd(), 'dist/**/*.entity.js'),User],
         synchronize: true,
       }),
       EventModule,
+      AuthModule,
+      
     ],
   
 
