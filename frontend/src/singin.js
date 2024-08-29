@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext'; 
+import './App.css';
 
 function Signin() {
     const [email, setEmail] = useState('');
@@ -34,12 +35,13 @@ function Signin() {
     };
 
     return (
-        <div>
+        <div >
             <main className='form-signin'>
-                <form onSubmit={handleSubmit}>
-                    <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-                    <div className="form-floating">
-                        <input
+                <form onSubmit={handleSubmit} style={{boxShadow: "20px 20px 20px 20px rgba(0, 0, 0, 0.2)"}}>
+                    <h1 className="h3 mb-3 fw-normal" style={{margin:"2px 10px"}}>Please sign in</h1>
+                    <div Style={{margin:"10px"}}>
+                    
+                        <input 
                             type="email"
                             className="form-control"
                             id="floatingInput"
@@ -48,8 +50,8 @@ function Signin() {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                         
-                    </div>
-                    <div className="form-floating">
+                   
+                  
                         <input
                             type="password"
                             className="form-control"
@@ -59,9 +61,9 @@ function Signin() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                        
-                    </div>
                     
-                    <button className="w-100 btn btn-lg btn-primary" type="submit">
+                    </div>
+                    <button className="w-100 btn btn-lg btn-primary" style ={{ margin:"10px 80px",padding:"6px 60px",textAlign:"center",color:"white",backgroundColor:"blue"}} type="submit">
                         Sign in
                     </button>
                     
