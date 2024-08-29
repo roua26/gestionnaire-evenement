@@ -5,21 +5,21 @@ import { useNavigate } from 'react-router';
 function Register() {
     const [nom, setNom] = useState("");
     const [prenom, setPrenom] = useState("");
-    const [date, setDate] = useState("");
+    const [dateNes, setDate] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const submit = (e) => {
         e.preventDefault();
-        if (!nom || !prenom || !date || !email || !password) {
+        if (!nom || !prenom || !dateNes|| !email || !password) {
             alert("Tous les champs doivent être remplis.");
             return;
         }
         const eventData = {
             nom,
             prenom,
-            date,
+            dateNes,
             email,
             password
         };

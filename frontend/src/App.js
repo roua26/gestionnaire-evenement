@@ -5,12 +5,13 @@ import UpdateEv from "./UpdateEv";
 import Nav from "./Nav";
 import Singin from "./singin";
 import Register from "./Register";
+import { AuthProvider } from './AuthContext';
 
 function App (){
 
 
   return(
-    
+    <AuthProvider>
      <BrowserRouter>
      <Nav/>
        <Routes>
@@ -23,6 +24,7 @@ function App (){
 
        </Routes>
      </BrowserRouter>
+     </AuthProvider>
 
     
   )
